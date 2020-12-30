@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Results from "./components/Results";
+import Nominations from "./components/Nominations";
+
+import { GlobalProvider } from "./context/GlobalState";
+
+import { useState } from "react";
+import axios from "axios";
 
 function App() {
+  const [state, setState] = useState({
+    s: "",
+    results: [],
+    nominations: [],
+  });
+
+  state.nominations.length = 5;
+
+  const apiurl = "http://www.omdbapi.com/?apikey=c00d1dfe";
+
+  const search = (e) => {
+    if (e.key === "Enter") {
+      axios(apiurl + "&s=" + state.s).then(({ data }) => {
+        let results = data.Search;
+
+        setState((prevState) => {
+          return { ...prevState, results: results };
+        });
+      });
+    }
+  };
+
+  const handleInput = (e) => {
+    e.preventDefault();
+    let s = e.target.value;
+
+    setState((prevState) => {
+      return { ...prevState, s: s };
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <div className="App">
+        <Header handleInput={handleInput} search={search} />
+        <main className="main">
+          <Results results={state.results} />
+          <Nominations nominations={state.nominations} />
+        </main>
+      </div>
+    </GlobalProvider>
   );
 }
 

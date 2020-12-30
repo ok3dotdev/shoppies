@@ -1,13 +1,92 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 42px;
+}
+
+li {
+  margin: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ededed;
+  border-radius: 3px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+/* App section */
+
+.App {
+  height: 100vh;
+  background-color: #f4f6f8;
+}
+
+/* Header Section */
+
+.header {
+  background-color: white;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 100px;
+  margin-bottom: 50px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ede7e7;
+  border-radius: 5px;
+  height: 28px;
+  padding: 0 10px;
+  margin-right: 120px;
+}
+
+.searchbox {
+  border: transparent;
+}
+
+.icon {
+  opacity: 50%;
+  padding-right: 5px;
+}
+
+/* Main Section */
+
+.results {
+  background-color: white;
+  padding: 0 30px;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  margin: 0 120px;
+  justify-content: space-between;
+  flex: 1fr 1fr;
+}
+
+/* Nominations */
+.nominations {
+  padding: 40px;
+  border: 1px solid #f0f0f0;
+  height: auto;
 }
