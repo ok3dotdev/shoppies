@@ -11,10 +11,8 @@ function App() {
   const [state, setState] = useState({
     s: "",
     results: [],
-    nominations: [],
   });
 
-  state.nominations.length = 5;
 
   const apiurl = "http://www.omdbapi.com/?apikey=c00d1dfe";
 
@@ -44,7 +42,7 @@ function App() {
         <Header handleInput={handleInput} search={search} />
         <main className="main">
           <Results results={state.results} />
-          <Nominations nominations={state.nominations} />
+          <Nominations />
         </main>
       </div>
     </GlobalProvider>

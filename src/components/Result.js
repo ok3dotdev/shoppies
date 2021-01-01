@@ -4,12 +4,11 @@ import { GlobalContext } from "../context/GlobalState";
 function Result({ result }) {
   const { addMovieToNominations, nominations } = useContext(GlobalContext);
 
-  let storedMovie = nominations.find((o) => o.imdbID === result.imdbID);
+  let storedMovie = nominations.find((nomination) => nomination.imdbID === result.imdbID);
 
   const nominationsDisabled = storedMovie ? true : false;
   return (
     <ul className="results result">
-      {/* <img src={result.Poster} /> */}
       <li className="result-title">{result.Title}</li>
       <button
         className="btn"
