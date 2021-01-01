@@ -1,6 +1,8 @@
-# Shopify UX challenge Summer 2021
+  # Shopify UX challenge Summer 2021
 
-![demo](https://raw.githubusercontent.com/shoppies/main/src/images/demo.png)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/47e2c1b3-13dc-478e-843e-22c24bd48914/deploy-status)](https://app.netlify.com/sites/angry-beaver-925715/deploys)
+
+![demo](src/images/demo.png)
 
 The Shoppies is a movie nomination app for shopify. The app lets users search OMDB api for movies and lists the movies out, users can nominate 5 movies and save to a list.
 
