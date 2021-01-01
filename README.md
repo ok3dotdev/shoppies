@@ -1,6 +1,6 @@
-                                                        # Shopify UX challenge Summer 2021
+  # Shopify UX challenge Summer 2021
 
-                                                  [![Netlify Status](https://api.netlify.com/api/v1/badges/47e2c1b3-13dc-478e-843e-22c24bd48914/deploy-status)](https://app.netlify.com/sites/angry-beaver-925715/deploys)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/47e2c1b3-13dc-478e-843e-22c24bd48914/deploy-status)](https://app.netlify.com/sites/angry-beaver-925715/deploys)
 
 ![demo](src/images/demo.png)
 
