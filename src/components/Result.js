@@ -9,7 +9,7 @@ function Result({ result }) {
   const nominationsDisabled = storedMovie ? true : false;
   return (
     <ul className="results result">
-      <li className="result-title">{result.Title}</li>
+      <li className="result-title">{result.Title} {''}<span>({result.Year})</span></li>
       <button
         className="btn"
         disabled={nominationsDisabled}

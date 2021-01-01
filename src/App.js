@@ -9,7 +9,7 @@ import axios from "axios";
 
 function App() {
   const [state, setState] = useState({
-    s: "",
+    query: "",
     results: [],
   });
 
@@ -18,7 +18,7 @@ function App() {
 
   const search = (e) => {
     if (e.key === "Enter") {
-      axios(apiurl + "&s=" + state.s).then(({ data }) => {
+      axios(apiurl + "&s=" + state.query).then(({ data }) => {
         let results = data.Search;
 
         setState((prevState) => {
@@ -30,10 +30,10 @@ function App() {
 
   const handleInput = (e) => {
     e.preventDefault();
-    let s = e.target.value;
+    let query = e.target.value;
 
     setState((prevState) => {
-      return { ...prevState, s: s };
+      return { ...prevState, query: query };
     });
   };
   return (
@@ -43,6 +43,7 @@ function App() {
         <main className="main">
           <Results results={state.results} />
           <Nominations />
+
         </main>
       </div>
     </GlobalProvider>
