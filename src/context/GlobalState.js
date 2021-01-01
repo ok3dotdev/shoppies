@@ -3,7 +3,7 @@ import AppReducer from "./AppReducer";
 
 //initial state
 const initialState = {
-  nominations: [],
+  nominations: localStorage.getItem('nominations') ? JSON.parse(localStorage.getItem('nominations')) : new Array(5),
 };
 
 //creating context
@@ -14,10 +14,11 @@ export const GlobalContext = createContext(initialState);
 export const GlobalProvider = (props) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
-  // useEffect(() => {
-  //   localStorage.setItem("nominations", JSON.stringify(state.nominations));
-  //   localStorage.setItem("nominated", JSON.stringify(state.nominated));
-  // }, [state]);
+  useEffect(() => {
+    localStorage.setItem("nominations", JSON.stringify(state.nominations));
+
+
+  }, [state]);
 
   //actions
   const addMovieToNominations = (result) => {

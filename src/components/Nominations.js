@@ -16,7 +16,7 @@ function Nominations() {
       <h3>Nominations</h3>
       <ul>
         {nominations.map((nomination) => (
-          <div className="result results">
+          <div key={nomination.imdbID} className="result results">
             <li className="result-title">{nomination.Title}</li>
             <button onClick={() => removeMovieFromNominations(nomination.imdbID)} className="btn">Remove</button>
           </div>

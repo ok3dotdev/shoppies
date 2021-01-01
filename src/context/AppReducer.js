@@ -1,9 +1,9 @@
-export default (state, action) => {
+function AppReducer(state, action) {
     switch (action.type) {
         case 'ADD_MOVIE_TO_NOMINATIONS':
             return {
                 ...state,
-                nominations: [action.payload, ...state.nominations]
+                nominations: (state.nominations.length === 5) ? Object.seal(state.nominations) : ''
             }
         case 'REMOVE_MOVIE_FROM_NOMINATIONS':
             return {
@@ -15,3 +15,5 @@ export default (state, action) => {
             return state;
     }
 }
+
+export default AppReducer;
