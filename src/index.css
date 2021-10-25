@@ -89,4 +89,5 @@ button {
   padding: 40px;
   border: 1px solid #f0f0f0;
   height: auto;
+  min-width: 40%;
 }
